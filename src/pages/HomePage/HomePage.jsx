@@ -1,40 +1,46 @@
-import {useState, useEffect} from 'react'
-
-import Button from 'components/Button/Button'
-import TextField from 'components/TextField/TextField'
+import Text from 'components/Text/Text'
 import Panel from 'components/Panel/Panel'
-import ConfirmModal from 'components/ConfirmModal/ConfirmModal'
-import Spinner from 'components/Spinner/Spinner'
+import texts from 'config/texts'
 
 import './HomePage.scss'
 
+const {title, subTitle, p1, objectives, hobbies, skills} = texts
+
 const HomePage = ({}) => {
-
-  const [field, setField] = useState('')
-  const [isModal, setIsModal] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {if (isLoading) {setTimeout(() => {setIsLoading(false)}, [1500])}}, [isLoading])
-
   return (
     <div id='home-page-container'>
-      <ConfirmModal
-        isActive={isModal}
-        handleClose={() => setIsModal(false)}
-        label='Confirmer'
-        handleConfirm={() => console.warn('ConfirmModal: handleConfirm')}
-      />
-      <Panel label={import.meta.env.VITE_API_URL}>
-        <Button label='Open modal' onClick={() => setIsModal(true)} />
-        <Button isDisabled={isLoading} label='Start loading' onClick={() => setIsLoading(true)} />
-        <Spinner isLoading={isLoading} />
-        <TextField
-          placeholder='Placeholder'
-          value={field}
-          onChange={(e) => setField(e)}
-          onEnter={() => console.warn('TextField: onEnter:', field)}
-        />
-      </Panel>
+      <div className='top-area'>
+        <div className='texts column'>
+          <Text className='title' text={title} isWeight />
+          <Text text={subTitle} isWeight />
+          <Text text={p1} />
+        </div>
+        <div className='panels column'>
+          <Panel title='Objectifs'>
+            <Text text={objectives} />
+          </Panel>
+          <Panel title='Passions'>
+            {hobbies?.map(({name, description}, i) => (
+              <div className='column no-gap' key={i}>
+                <Text text={`➤ ${name}`} />
+                <Text text={description} />
+              </div>
+            ))}
+          </Panel>
+          <Panel title='Compétences'>
+            {skills?.map(({category, description}, i) => (
+              <div className='column no-gap' key={i}>
+                <Text text={`➤ ${category}`} />
+                <Text text={description} />
+              </div>
+            ))}
+          </Panel>
+        </div>
+        </div>
+      <div className='projects-area'>
+
+      </div>
+
     </div>
   )
 }

@@ -1,0 +1,123 @@
+@use 'styles/colors.scss' as colors;
+@use 'styles/ui.scss' as ui;
+@use 'styles/fontSizes.scss' as fontSizes;
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all ui.$animMedium;
+
+  &.selected {grid-template-rows: 1fr;}
+}
+
+.project-card-container {
+  min-height: calc(fontSizes.$small * 4);
+  border: 4px solid transparent;
+  border-color: colors.$primary;
+  border-radius: ui.$radius;
+  font-size: fontSizes.$small;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-color: colors.$cloudy2;
+
+  &.selected {
+    border-color: colors.$text;
+    cursor: auto;
+
+    .body {
+      height: 100%;
+      overflow-y: scroll;
+
+      .top {
+        @media only screen and (max-width: 450px) {
+          flex-direction: column;
+          gap: ui.$margin;
+        }
+
+        .left-part {
+
+          .logo {filter: saturate(100%) drop-shadow(0 0 3px black);}
+
+          .label {white-space: normal;}
+        }
+      }
+    }
+  }
+
+  &:hover {border-color: colors.$text;}
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: ui.$margin;
+    justify-content: space-between;
+    padding: ui.$padding;
+    box-sizing: border-box;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {width: 0;}
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      .icon-base {
+        height: calc(fontSizes.$small * 2);
+        width: calc(fontSizes.$small * 2);
+        object-fit: scale-down;
+      }
+
+      .left-part {
+        display: flex;
+        align-items: center;
+        gap: ui.$margin;
+
+        .logo {
+          filter: saturate(0) drop-shadow(0 0 3px black);
+          transition: all ui.$animMedium;
+        }
+
+        .label {
+          display: flex;
+          gap: ui.$margin;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .texts {
+            display: flex;
+            flex-direction: column;
+
+            .title {font-weight: bold;}
+
+            .infos {font-style: italic;}
+          }
+        }
+      }
+
+      .right-part {
+        display: flex;
+        align-items: center;
+        gap: ui.$margin;
+
+        .icon-clickable {
+          filter: drop-shadow(0 0 3px black);
+          cursor: pointer;
+          transition: all ui.$animMedium;
+
+          &:hover {
+            filter: drop-shadow(0 0 1px colors.$text);
+          }
+        }
+      }
+    }
+
+    .tags {
+      display: flex;
+      gap: calc(ui.$margin / 2);
+      flex-wrap: wrap;
+    }
+  }
+}

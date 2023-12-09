@@ -4,16 +4,16 @@ import Icon from 'components/Icon/Icon'
 import './Panel.scss'
 
 const Panel = ({
-  label, children, className, onClose,
+  title, children, className, onClose,
   onClick, childrenClassName
 }) => {
   return (
     <div className={`panel-container ${className}`} onClick={onClick}>
       {
-        label &&
-        <div className='label-area'>
+        title &&
+        <div className='title-area'>
           <span className='row'>
-            <span className='label'>{label}</span>
+            <span className='panel-title'>{title}</span>
             {onClose && <Icon onClick={onClose} src={closeSvg} />}
           </span>
           <Separator />
