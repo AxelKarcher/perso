@@ -1,0 +1,12 @@
+.header-container {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  background-color: var(--colors-primary);
+  border-radius: 0 0 var(--ui-radius) var(--ui-radius);
+  padding: var(--ui-padding);
+  box-sizing: border-box;
+  margin-bottom: var(--ui-margin);
+  box-shadow: var(--colors-boxShadow);
+  color: var(--colors-textBis);
+}

@@ -5,15 +5,16 @@
 
 #router-container {
   // COLORS
-  --colors-background: hsl(0, 0%, 96%);
-  --colors-primary: rgb(0, 192, 118);
-  --colors-secondary: #96D4BC;
+  --colors-background: #DEEBF7;
+  --colors-primary: #1F4E79;
+  --colors-secondary: #4e98de;
   --colors-text: #333333;
-  --colors-cloudy: #00C07644;
+  --colors-textBis: #eaeaea;
+  --colors-cloudy: #FFFFFF44;
   --colors-panel: white;
   --colors-boxShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --colors-dropShadow: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
-  --colors-dropShadowHover: drop-shadow(0px 0px 2px rgba(0, 192, 118, 0.5));
+  --colors-dropShadowHover: drop-shadow(0px 0px 2px #1F4E7980);
   --colors-shadow: #333333;
   --colors-disabled: rgb(184, 184, 184);
   --colors-disabledText: rgb(218, 218, 218);
@@ -29,11 +30,12 @@
   --ui-radius: 6px;
 
   // FONTSIZES
-  $fontSizesCoef: 0.30vw;
-  --fontSizes-small: calc(12px + #{$fontSizesCoef});
-  --fontSizes-medium: calc(18px + #{$fontSizesCoef});
-  --fontSizes-large: calc(24px + #{$fontSizesCoef});
-  --fontSizes-title: calc(50px + #{$fontSizesCoef});
+  $fontSizesCoef: 0.40vw;
+  --fontSizes-small: calc(10px + #{$fontSizesCoef});
+  --fontSizes-medium: calc(16px + #{$fontSizesCoef});
+  --fontSizes-large: calc(20px + #{$fontSizesCoef});
+  --fontSizes-title: calc(30px + #{2.75vw});
+  --fontSizes-subTitle: calc(20px + #{1vw});
 
   width: 100vw;
   height: 100vh;
@@ -47,5 +49,8 @@
 
   ::-webkit-scrollbar-track {background: var(--colors-secondary);}
 
-  ::selection {background-color: var(--colors-primary);}
+  ::selection {
+    background-color: var(--colors-primary);
+    color: white;
+  }
 }

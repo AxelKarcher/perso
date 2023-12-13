@@ -1,7 +1,7 @@
 export default {
   title: "Axel Karcher",
   subTitle: "Développeur Full-stack",
-  p1: "En dernière année d'EPITECH Paris, je suis activement à la recherche stage \
+  p1: "En dernière année d'EPITECH Paris, je suis activement à la recherche d'un stage \
     de fin d'études 6 mois à partir de Mars 2024 en tant que développeur web Full-stack.",
   objectives: "Partager, apprendre, comprendre et concrétiser des besoins. \
     Travailler dans une équipe à taille humaine. Évoluer vers la gestion de projet.",
