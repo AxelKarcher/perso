@@ -37,6 +37,12 @@
   --fontSizes-title: calc(30px + #{2.75vw});
   --fontSizes-subTitle: calc(20px + #{1vw});
 
+  // ICONSIZES
+  $iconSizesCoef: 0.40vw;
+  --iconSizes-small: calc(20px + #{$iconSizesCoef});
+  --iconSizes-medium: calc(40px + #{$iconSizesCoef});
+  --iconSizes-large: calc(60px + #{$iconSizesCoef});
+
   width: 100vw;
   height: 100vh;
   color: var(--colors-text);

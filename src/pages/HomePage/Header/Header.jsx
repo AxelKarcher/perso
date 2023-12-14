@@ -5,7 +5,7 @@ import './Header.scss'
 const Header = ({onClick}) => {
   return (
     <div className='header-container'>
-      <Text text='Compétences' isWeight onClick={onClick} />
+        <Text text='Compétences' isWeight onClick={onClick} />
     </div>
   )
 }

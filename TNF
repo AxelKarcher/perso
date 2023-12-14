@@ -1,0 +1,5 @@
+- généraliser duration de Modal et Toast
+- meilleur arrivée du Toast
+- relancer timer du Toast si recliqué (isActive local dans le composant, une fois le vraie prit en compte, close l'original)
+- position de départ du Toast
+- z index du Toast

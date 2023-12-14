@@ -1,0 +1,25 @@
+$moved: 100px;
+$duration: 1s;
+
+@keyframes coming {
+  from {transform: translateY($moved);}
+  to {transform: translateY(-$moved);}
+}
+
+@keyframes leaving {
+  from {transform: translateY(-$moved);}
+  to {transform: translateY($moved);}
+}
+
+.toast-container {
+  position: absolute;
+  bottom: 0px;
+  border-radius: var(--ui-radius);
+  background-color: var(--colors-secondary);
+  color: var(--colors-textBis);
+  padding: var(--ui-padding);
+  box-sizing: border-box;
+  animation: coming $duration forwards;
+
+  &.inactive {animation: leaving $duration forwards;}
+}

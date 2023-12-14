@@ -24,6 +24,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--ui-margin);
-    padding: calc(var(--ui-padding) / 2) var(--ui-padding);
+    padding: var(--ui-padding) var(--ui-padding);
   }
 }
