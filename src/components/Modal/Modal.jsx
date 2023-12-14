@@ -1,24 +1,25 @@
 import Panel from 'components/Panel/Panel'
 import './Modal.scss'
 
-const Modal = ({isActive, handleClose, children, className, label}) => {
+const Modal = ({isActive, handleClose, children, className, title}) => {
 
-  const handleCloseOnChildren = (e) => {e?.stopPropagation()}
+  const handleLocalClose = () => {handleClose()}
 
-  if (isActive) {
-    return (
-      <div className={`modal-container ${className}`} onClick={handleClose}>
-        <Panel
-          childrenClassName='children-container'
-          onClose={handleClose}
-          label={label}
-          onClick={handleCloseOnChildren}
-        >
-          {children}
-        </Panel>
-      </div>
-    )
-  }
+  return (
+    <div
+      className={`modal-container ${!isActive && 'inactive'} ${className}`}
+      onClick={handleLocalClose}
+    >
+      <Panel
+        childrenClassName='children-container'
+        onClose={handleLocalClose}
+        title={title}
+        onClick={(e) => e?.stopPropagation()}
+      >
+        {children}
+      </Panel>
+    </div>
+  )
 }
 
 export default Modal

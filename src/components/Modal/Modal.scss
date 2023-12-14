@@ -10,6 +10,8 @@
   z-index: 100;
   background-color: var(--colors-cloudy);
 
+  &.inactive {display: none;}
+
   .children-container {
     min-width: 200px;
     width: 25vw;

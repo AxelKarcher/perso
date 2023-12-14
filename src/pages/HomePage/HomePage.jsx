@@ -5,6 +5,8 @@ import Panel from 'components/Panel/Panel'
 import texts from 'config/texts'
 import ppImg from 'images/pp.png'
 import Header from './Header/Header'
+import Modal from 'components/Modal/Modal'
+import Button from 'components/Button/Button'
 
 import './HomePage.scss'
 
@@ -17,6 +19,7 @@ const HomePage = ({}) => {
   const skillsRef = useRef(null)
 
   const [textsHeight, setTextsHeight] = useState()
+  const [isModal, setIsModal] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,14 +33,16 @@ const HomePage = ({}) => {
     return () => {window.removeEventListener('resize', handleResize)}
   }, [])
 
-  const handleScroll = () => {
-    skillsRef.current.scrollIntoView({ behavior: 'smooth' })
-  }
+  const handleScroll = () => {skillsRef.current.scrollIntoView({ behavior: 'smooth' })}
 
   return (
     <div id='home-page-container'>
+      <Modal title='Mmmmh' isActive={isModal} handleClose={() => setIsModal(false)}>
+        <span>HOP</span>
+      </Modal>
       <Header onClick={handleScroll} />
       <div className='home-page-body'>
+        <Button label='test' onClick={() => setIsModal(true)} />
         <div className='top-area'>
           <div className='top-texts column'>
             <Text className='title' text={title} isWeight />
