@@ -1,9 +1,11 @@
 import {useState} from 'react'
 
-import './Footer.scss'
 import contacts from 'config/contacts'
 import Icon from 'components/Icon/Icon'
 import Toast from 'components/Toast/Toast'
+
+import downloadIcon from 'icons/download.svg'
+import './Footer.scss'
 
 const Footer = ({}) => {
 
@@ -14,6 +16,17 @@ const Footer = ({}) => {
   const handleToast = (copy) => {
     setIsToast(true)
     navigator.clipboard.writeText(copy)
+  }
+
+  const handleDownloadResume = () => {
+    const fileUrl = '/CV_Axel_KARCHER.pdf';
+    const downloadLink = document.createElement('a');
+
+    downloadLink.href = fileUrl;
+    downloadLink.download = 'CV_Axel_KARCHER';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
   }
 
   return (
@@ -31,6 +44,11 @@ const Footer = ({}) => {
           size='large'
         />
       ))}
+      <Icon
+        src={downloadIcon}
+        onClick={handleDownloadResume}
+        size='large'
+      />
     </div>
   )
 }

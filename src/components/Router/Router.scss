@@ -21,7 +21,7 @@
   --colors-danger: red;
 
   // DURATIONS
-  --durations-normal: 0.2s;
+  --durations-normal: 0.25s;
   --durations-long: 1s;
 
   // UI
@@ -31,7 +31,7 @@
 
   // FONTSIZES
   $fontSizesCoef: 0.40vw;
-  --fontSizes-small: calc(10px + #{$fontSizesCoef});
+  --fontSizes-small: calc(13px + #{$fontSizesCoef});
   --fontSizes-medium: calc(16px + #{$fontSizesCoef});
   --fontSizes-large: calc(20px + #{$fontSizesCoef});
   --fontSizes-title: calc(30px + #{2.75vw});
@@ -43,13 +43,17 @@
   --iconSizes-medium: calc(40px + #{$iconSizesCoef});
   --iconSizes-large: calc(60px + #{$iconSizesCoef});
 
+  // BREAKPOINTS
+  --bp-1: 1000px;
+  --bp-2: 530px;
+
   width: 100vw;
   height: 100vh;
   color: var(--colors-text);
   font-size: var(--fontSizes-medium);
   background-color: var(--colors-background);
 
-  ::-webkit-scrollbar {width: 10px;}
+  ::-webkit-scrollbar {width: 0;}
 
   ::-webkit-scrollbar-thumb {background: var(--colors-primary);}
 

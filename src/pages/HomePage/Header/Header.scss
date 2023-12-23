@@ -1,11 +1,17 @@
+$bp2: 530px;
+
 .header-container {
   position: sticky;
   top: 0;
   width: 100vw;
+  display: flex;
+  @media screen and (max-width: $bp2) {justify-content: space-around;}
+  gap: var(--ui-margin);
   background-color: var(--colors-primary);
   border-radius: 0 0 var(--ui-radius) var(--ui-radius);
   padding: var(--ui-padding);
   box-sizing: border-box;
   box-shadow: var(--colors-boxShadow);
   color: var(--colors-textBis);
+  z-index: 900;
 }

@@ -2,10 +2,23 @@ import Text from 'components/Text/Text'
 
 import './Header.scss'
 
-const Header = ({onClick}) => {
+const choices = [
+  {label: 'Compétences', identifier: 'skills'},
+  {label: 'Formation', identifier: 'education'},
+  {label: 'Expériences', identifier: 'projects'}
+]
+
+const Header = ({onSelectChoice}) => {
   return (
     <div className='header-container'>
-        <Text text='Compétences' isWeight onClick={onClick} />
+      {choices.map(({label, identifier}, i) => (
+        <Text
+          key={i}
+          text={label}
+          isWeight
+          onClick={() => onSelectChoice(identifier)}
+        />
+      ))}
     </div>
   )
 }

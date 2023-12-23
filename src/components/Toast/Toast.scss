@@ -1,5 +1,5 @@
 $moved: 100px;
-$duration: 1s;
+$duration: 0.6s;
 
 @keyframes coming {
   from {transform: translateY($moved);}
@@ -20,6 +20,8 @@ $duration: 1s;
   padding: var(--ui-padding);
   box-sizing: border-box;
   animation: coming $duration forwards;
+  box-shadow: var(--colors-boxShadow);
+  z-index: 900;
 
   &.inactive {animation: leaving $duration forwards;}
 }

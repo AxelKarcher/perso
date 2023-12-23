@@ -1,7 +1,19 @@
+@keyframes opening {
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(-90deg);}
+}
+
+@keyframes closing {
+  from {transform: rotateZ(-90deg);}
+  to {transform: rotateZ(0deg);}
+}
+
 .panel-container {
   border-radius: var(--ui-radius);
   box-shadow: var(--colors-boxShadow);
   background-color: var(--colors-panel);
+
+  &.collapser {cursor: pointer;}
 
   .title-area {
     display: flex;
@@ -15,6 +27,14 @@
       padding: calc(var(--ui-padding) / 2) var(--ui-padding);
 
       .panel-title {font-weight: bold;}
+
+      .opened {
+        animation: opening 0.25s forwards;
+      }
+
+      .closed {
+        animation: closing 0.25s forwards;
+      }
 
       img {height: var(--fontSizes-medium);}
     }

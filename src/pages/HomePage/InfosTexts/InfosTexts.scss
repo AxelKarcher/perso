@@ -1,0 +1,32 @@
+$bp2: 530px;
+
+.infos-texts-container {
+  @media screen and (max-width: $bp2) {text-align: center;}
+
+  .title {
+    font-size: var(--fontSizes-title);
+    line-height: var(--fontSizes-title);
+    font-family: 'TitleFont';
+  }
+
+  .pp-breakpoint {
+    display: none;
+    @media screen and (max-width: $bp2) {
+      flex-direction: flex;
+    }
+  }
+
+  .row {
+    display: flex;
+    @media screen and (max-width: $bp2) {
+      flex-direction: column;
+    }
+    gap: var(--ui-margin);
+
+    .pp-default {
+      @media screen and (max-width: $bp2) {
+        display: none;
+      }
+    }
+  }
+}
