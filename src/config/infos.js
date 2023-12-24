@@ -33,6 +33,10 @@ export default {
       description: 'Github, GitKraken, Jira, Notion, Trello, Unity'
     },
     {
+      category: 'Soft skills',
+      description: 'Rigueur, esprit critique, communication'
+    },
+    {
       category: 'Anglais',
       description: 'C1 (850 au TOEIC)'
     },

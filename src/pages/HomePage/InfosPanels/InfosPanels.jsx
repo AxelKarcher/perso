@@ -19,7 +19,7 @@ const InfosPanels = ({skillsRef, educationRef}) => {
           </div>
         ))}
       </Panel>
-      <Panel title='Compétences' forwardedRef={skillsRef}>
+      <Panel title='Compétences' className='scroll-target' forwardedRef={skillsRef}>
         {skills?.map(({category, description}, i) => (
           <div className='column no-gap' key={i}>
             <Text text={`➤ ${category}`} />
@@ -27,7 +27,7 @@ const InfosPanels = ({skillsRef, educationRef}) => {
           </div>
         ))}
       </Panel>
-      <Panel title='Formation' forwardedRef={educationRef}>
+      <Panel title='Formation' className='scroll-target' forwardedRef={educationRef}>
         {education?.map(({title, description}, i) => (
           <div className='column no-gap' key={i}>
             <Text text={`➤ ${title}`} />

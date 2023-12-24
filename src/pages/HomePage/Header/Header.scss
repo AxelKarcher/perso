@@ -1,12 +1,13 @@
 $bp2: 530px;
 
 .header-container {
+  user-select: none;
   position: sticky;
   top: 0;
   width: 100vw;
   display: flex;
   @media screen and (max-width: $bp2) {justify-content: space-around;}
-  gap: var(--ui-margin);
+  gap: calc(var(--ui-margin) * 2);
   background-color: var(--colors-primary);
   border-radius: 0 0 var(--ui-radius) var(--ui-radius);
   padding: var(--ui-padding);
@@ -14,4 +15,10 @@ $bp2: 530px;
   box-shadow: var(--colors-boxShadow);
   color: var(--colors-textBis);
   z-index: 900;
+
+  .choice {
+    transition: color var(--durations-normal);
+
+    &.near {color: var(--colors-disabled); }
+  }
 }

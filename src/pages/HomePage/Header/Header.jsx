@@ -8,7 +8,7 @@ const choices = [
   {label: 'Expériences', identifier: 'projects'}
 ]
 
-const Header = ({onSelectChoice}) => {
+const Header = ({scrollInfos, onSelectChoice}) => {
   return (
     <div className='header-container'>
       {choices.map(({label, identifier}, i) => (
@@ -17,6 +17,7 @@ const Header = ({onSelectChoice}) => {
           text={label}
           isWeight
           onClick={() => onSelectChoice(identifier)}
+          className={`choice ${scrollInfos[identifier] && 'near'}`}
         />
       ))}
     </div>
