@@ -1,9 +1,17 @@
+import emg from 'assets/projects/emg.png'
+import cinqdegres from 'assets/projects/5degres.png'
+import omnegy from 'assets/projects/omnegy.png'
+import ysocorp from 'assets/projects/ysocorp.png'
+import epitech from 'assets/projects/epitech.png'
+import safescar from 'assets/projects/safescar.png'
+
 export default [
   {
     title: 'Euro Media Group',
     role: 'Développement Front-end',
     duration: '6 mois',
     type: 'Stage',
+    icons: [emg],
     context: "EMG est une entreprise pilier dans la réalisation d'événements sportifs pour la TV broadcast \
       (Football, Rugby, Basketball...) depuis plus de 30 ans. J'avais rejoint la cellule R&D où avait commencé \
       la migration de l'interface de “pilotage synthés” pour opérateurs. L'application web communique avec \
@@ -28,6 +36,7 @@ export default [
     role: 'Développement Front-end',
     duration: '4 mois',
     type: 'Stage',
+    icons: [cinqdegres, omnegy],
     context: "5DEGRES est une régie de développeurs. J'ai été envoyé en mission à Omnegy avec mon maître de \
       stage pour 4 mois. Omnegy est une entreprise spécialisée dans le trading d'énergies et l'aide à la \
       visualisation de la consommation pour d'autres entreprises. Une maquette du dashboard à \
@@ -59,6 +68,7 @@ export default [
     role: 'Développement Full-stack',
     duration: '6 mois',
     type: 'Stage en alternance',
+    icons: [ysocorp],
     context: "YSO Corp est une entreprise spécialisée dans la création, édition et publication de jeux mobiles \
       “hyper-casu” (simples et accessibles, souvent destinés à un public occasionnel ou débutant). Une \
       équipe “engine” récupère les informations d'un projet Unity et traduit les scripts de C# en JavaScript. \
@@ -81,10 +91,11 @@ export default [
     tools: ['Unity', 'BitBucket', 'Slack', 'GitKraken', 'Notion', 'DBeaver']
   },
   {
-    title: 'SafeScar',
+    title: 'EPITECH / SafeScar',
     role: 'Lead Front-end',
     duration: '2 ans',
-    type: "Projet de fin d'études (EPITECH Paris)",
+    type: "Projet de fin d'études",
+    icons: [epitech, safescar],
     context: "SafeScar est une application centralisant les outils des tatoueurs et de leurs futurs clients. \
       L'équipe se composait de 3 développeurs Front-end, 2 Back-end et un IA & site vitrine. Fort de mon \
       expérience avec les technologies React, ma rigueur et mon désir de suivre de près chaque pan du \

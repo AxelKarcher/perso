@@ -1,4 +1,4 @@
-$bp2: 530px;
+$bp2: 700px;
 
 .infos-texts-container {
   @media screen and (max-width: $bp2) {text-align: center;}
@@ -11,22 +11,19 @@ $bp2: 530px;
 
   .pp-breakpoint {
     display: none;
-    @media screen and (max-width: $bp2) {
-      flex-direction: flex;
-    }
+    @media screen and (max-width: $bp2) {display: flex;}
+    justify-content: center;
+
+    img {max-width: 150px;}
   }
 
   .row {
     display: flex;
-    @media screen and (max-width: $bp2) {
-      flex-direction: column;
-    }
+    justify-content: center;
     gap: var(--ui-margin);
 
     .pp-default {
-      @media screen and (max-width: $bp2) {
-        display: none;
-      }
+      @media screen and (max-width: $bp2) {display: none;}
     }
   }
 }

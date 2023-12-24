@@ -15,19 +15,21 @@ const Projects = ({projectsRef}) => {
       {projects.map((project, i) => {
         const {
           title, role, duration, type, context,
-          achievements, technologies, tools
+          achievements, technologies, tools, icons
         } = project
 
+        const isSelected = selectedIdx === i
         const topText = `${role} | ${type} | ${duration}`
 
         return (
           <Panel
             key={i}
             title={title}
+            icons={icons}
             isCollapser
-            isOpen={selectedIdx === i}
+            isOpen={isSelected}
             onClick={() => setSelectedIdx(i)}
-            onTitleClick={() => setSelectedIdx(selectedIdx === i ? undefined : i)}
+            onTitleClick={() => setSelectedIdx(isSelected ? undefined : i)}
             forwardedRef={projectsRef}
           >
             <Text size='small' text={topText} />

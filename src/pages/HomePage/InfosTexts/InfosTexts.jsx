@@ -29,11 +29,11 @@ const InfosTexts = ({}) => {
   return (
     <div className='infos-texts-container'>
       <Text className='title' text={title} isWeight />
-      {/* <div className='pp-breakpoint'>
+      <div className='pp-breakpoint'>
         <img src={ppImg} />
-      </div> */}
+      </div>
       <div className='row'>
-        {/* <img className='pp-default' src={ppImg} style={{height: textsHeight}} /> */}
+        <img className='pp-default' src={ppImg} style={{height: textsHeight}} />
         <div ref={textsRef} className='column'>
           <Text className='subTitle' text={subTitle} isWeight />
           <Text text={p1} />

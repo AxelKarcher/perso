@@ -26,15 +26,23 @@
       align-items: center;
       padding: calc(var(--ui-padding) / 2) var(--ui-padding);
 
-      .panel-title {font-weight: bold;}
+      .title-row {
+        display: flex;
+        align-items: center;
+        gap: var(--ui-margin);
 
-      .opened {
-        animation: opening 0.25s forwards;
+        .title-icon {
+          filter: grayscale(100%);
+
+          &.colored {filter: grayscale(0%);}
+        }
       }
 
-      .closed {
-        animation: closing 0.25s forwards;
-      }
+      .title-panel {font-weight: bold;}
+
+      .opened {animation: opening 0.25s forwards;}
+
+      .closed {animation: closing 0.25s forwards;}
 
       img {height: var(--fontSizes-medium);}
     }
